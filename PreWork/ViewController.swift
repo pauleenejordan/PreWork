@@ -9,6 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var twenty: UILabel!
+    @IBOutlet weak var eighteen: UILabel!
+    @IBOutlet weak var fifteen: UILabel!
     @IBOutlet weak var tipAmountLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var totalLabel: UILabel!
@@ -25,10 +28,17 @@ class ViewController: UIViewController {
         let tip = bill *
         tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
+        let fifteenPercentage = bill * 0.15
+        let eighteenPercentage = bill * 0.18
+        let twentyPercentage = bill * 0.20
         // Updaet Tip Amount Label
         tipAmountLabel.text = String(format: "$%.2f", tip)
         // Update Total Amount
         totalLabel.text = String(format: "$%.2f", total)
+        fifteen.text = String(format: "$%.2f", fifteenPercentage)
+        eighteen.text = String(format: "$%.2f", eighteenPercentage)
+        twenty.text = String(format: "$%.2f", twentyPercentage)
+        
     }
     
 }
